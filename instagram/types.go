@@ -9,6 +9,8 @@ type User struct {
 	ProfilePicture string      `json:"profile_picture,omitempty"`
 	Bio            string      `json:"bio,omitempty"`
 	Website        string      `json:"website,omitempty"`
+	Likes          int64       `json:"likes,omitempty"`
+	Comments       int64       `json:"comments,omitempty"`
 	Counts         *UserCounts `json:"counts,omitempty"`
 }
 
