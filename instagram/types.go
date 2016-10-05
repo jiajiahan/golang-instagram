@@ -11,6 +11,7 @@ type User struct {
 	Website        string      `json:"website,omitempty"`
 	Likes          int64       `json:"likes,omitempty"`
 	Comments       int64       `json:"comments,omitempty"`
+	ConnectedAt    int64       `json:"connected_at,omitempty"`
 	Counts         *UserCounts `json:"counts,omitempty"`
 }
 
