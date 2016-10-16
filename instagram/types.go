@@ -12,6 +12,7 @@ type User struct {
 	Likes          int64       `json:"likes,omitempty"`
 	Comments       int64       `json:"comments,omitempty"`
 	ConnectedAt    int64       `json:"connected_at,omitempty"`
+	DisconnectedAt int64       `json:"disconnected_at,omitempty"`
 	Counts         *UserCounts `json:"counts,omitempty"`
 }
 
