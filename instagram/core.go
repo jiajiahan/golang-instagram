@@ -122,6 +122,10 @@ func urlify(path string) string {
 	return baseUrl + path
 }
 
+func ConfigBaseUrl(newBaseUrl string) {
+	baseUrl = newBaseUrl
+}
+
 type MetaError Meta
 
 func (m *MetaError) Error() string {
