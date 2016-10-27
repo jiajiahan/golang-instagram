@@ -9,11 +9,12 @@ type User struct {
 	ProfilePicture string      `json:"profile_picture,omitempty"`
 	Bio            string      `json:"bio,omitempty"`
 	Website        string      `json:"website,omitempty"`
-	Likes          int64       `json:"likes,omitempty"`
-	Comments       int64       `json:"comments,omitempty"`
+	Likes          int64       `json:"likes"`
+	Comments       int64       `json:"comments"`
 	ConnectedAt    int64       `json:"connected_at,omitempty"`
 	DisconnectedAt int64       `json:"disconnected_at,omitempty"`
 	Counts         *UserCounts `json:"counts,omitempty"`
+	Rank           int64       `json:"rank"`
 }
 
 // Instagram User Counts object. Returned on User objects
