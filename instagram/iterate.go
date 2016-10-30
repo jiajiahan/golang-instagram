@@ -1,7 +1,6 @@
 package instagram
 
 // IterateMedia makes pagination easy by converting the repeated api.NextMedias() call to a channel of media.
-// Media will be passed in the reverse order of individual requests, for instance GetUserRecentMedia will go in reverse CreatedTime order.
 // If you desire to break early, pass in a doneChan and close when you are breaking from iteration
 func (api *Api) IterateMedia(res *PaginatedMediasResponse, doneChan <-chan bool) (<-chan *Media, <-chan error) {
 	mediaChan := make(chan *Media)
@@ -21,8 +20,8 @@ func (api *Api) IterateMedia(res *PaginatedMediasResponse, doneChan <-chan bool)
 				return
 			}
 
-			// Iterate backwards
-			for i := len(res.Medias) - 1; i >= 0; i-- {
+			// Iterate
+			for i := 0; i < len(res.Medias); i++ {
 				select {
 				case mediaChan <- &res.Medias[i]:
 				case <-doneChan:
@@ -44,7 +43,6 @@ func (api *Api) IterateMedia(res *PaginatedMediasResponse, doneChan <-chan bool)
 }
 
 // IterateUsers makes pagination easy by converting the repeated api.NextUsers() call to a channel of users.
-// Users will be passed in the reverse order of individual requests.
 // If you desire to break early, pass in a doneChan and close when you are breaking from iteration
 func (api *Api) IterateUsers(res *PaginatedUsersResponse, doneChan <-chan bool) (<-chan *User, <-chan error) {
 	userChan := make(chan *User)
@@ -64,8 +62,8 @@ func (api *Api) IterateUsers(res *PaginatedUsersResponse, doneChan <-chan bool) 
 				return
 			}
 
-			// Iterate backwards
-			for i := len(res.Users) - 1; i >= 0; i-- {
+			// Iterate
+			for i := 0; i < len(res.Users); i++ {
 				select {
 				case userChan <- &res.Users[i]:
 				case <-doneChan:
