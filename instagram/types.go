@@ -11,8 +11,10 @@ type User struct {
 	Website        string      `json:"website,omitempty"`
 	Likes          int64       `json:"likes"`
 	Comments       int64       `json:"comments"`
-	ConnectedAt    int64       `json:"connected_at,omitempty"`
-	DisconnectedAt int64       `json:"disconnected_at,omitempty"`
+	FollowedAt     int64       `json:"followed_at,omitempty"`
+	FolloingAt     int64       `json:"following_at,omitempty"`
+	UnfollowedAt   int64       `json:"unfollowed_at,omitempty"`
+	UnfollowingAt  int64       `json:"unfollowing_at,omitempty"`
 	Counts         *UserCounts `json:"counts,omitempty"`
 	Rank           int64       `json:"rank"`
 }
