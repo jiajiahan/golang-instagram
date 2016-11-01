@@ -12,7 +12,7 @@ type User struct {
 	Likes          int64       `json:"likes"`
 	Comments       int64       `json:"comments"`
 	FollowedAt     int64       `json:"followed_at,omitempty"`
-	FolloingAt     int64       `json:"following_at,omitempty"`
+	FollowingAt    int64       `json:"following_at,omitempty"`
 	UnfollowedAt   int64       `json:"unfollowed_at,omitempty"`
 	UnfollowingAt  int64       `json:"unfollowing_at,omitempty"`
 	Counts         *UserCounts `json:"counts,omitempty"`
